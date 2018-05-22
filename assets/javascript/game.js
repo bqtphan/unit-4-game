@@ -47,6 +47,9 @@ function winCondition() {
         $("#playerWin").text(playerWin);
         alert("You win!");
         isDone = true;
+        if (isDone) {
+            init();
+        }
     }
     else {
         if (keepScore > goalNumber) {
@@ -54,14 +57,13 @@ function winCondition() {
             $("#playerLose").text(playerLose);
             alert("You lose!!");
             isDone = true;
+            if (isDone) {
+                init();
+            }
         }
     }
 }
 //      RESET
-if (isDone) {
-    init();
-}
-
 function init() {
     keepScore = 0;
     goalNumber = Math.floor(Math.random() * 30 + 20);
